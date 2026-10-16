@@ -4,10 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WeatherApp.SideBar">
+    
     <StackPanel>
+
+      <StackPanel.Styles>
+        <Style Selector="Button.Primary">
+          <Setter Property="Background" Value="Blue"/>
+          <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.Primary:pointerover">
+          <Setter Property="Background" Value="DarkBlue"/>
+          <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style Selector="Button.Danger">
+          <Setter Property="Background" Value="Red"/>
+          <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.Danger:pointerover">
+          <Setter Property="Background" Value="DarkRed"/>
+          <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+      </StackPanel.Styles>
+
       <TextBlock>Welcome to WeatherApp</TextBlock>
-      <Button Content="Dashboard"></Button>
-      <Button Content="Account"></Button>
-      <Button Content="Settings"></Button>
+      <Button Classes="Primary" Content="Dashboard"></Button>
+      <Button Classes="Danger" Content="Account"></Button>
+      <Button Classes="Default" Content="Settings"></Button>
     </StackPanel>
 </UserControl>
