@@ -1,9 +1,11 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WeatherApp.ViewModels"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="WeatherApp.SideBar">
+             x:Class="WeatherApp.SideBar"
+             x:DataType="vm:MainViewModel">
     
     <UserControl.Resources>
       <ResourceDictionary>
@@ -37,8 +39,11 @@
       </StackPanel.Styles>
 
       <TextBlock>Welcome to WeatherApp</TextBlock>
-      <Button Classes="Primary" Content="Dashboard"></Button>
-      <Button Classes="Danger" Content="Account"></Button>
-      <Button Theme="{StaticResource ButtonTheme}" Classes="Default" Content="Settings"></Button>
+      <Button Classes="Primary" Content="Dashboard"
+              Click="Click_Button"></Button>
+      <Button Classes="Danger" Content="Account"
+              Click="Click_Button"></Button>
+      <Button Theme="{StaticResource ButtonTheme}" Classes="Default" Content="Settings"
+              Click="Click_Button"></Button>
     </StackPanel>
 </UserControl>

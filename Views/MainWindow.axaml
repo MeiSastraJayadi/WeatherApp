@@ -21,7 +21,7 @@
         <weatherapp:SideBar Grid.Column="0"></weatherapp:SideBar>
         <StackPanel Grid.Column="1">
             <TextBlock>Dashboard</TextBlock>
-            <TextBlock>Welcome to WeatherApp</TextBlock>
+            <TextBlock Text="{Binding Greeting}"/>
         </StackPanel>
     </Grid>
 

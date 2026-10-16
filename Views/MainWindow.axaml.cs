@@ -20,6 +20,7 @@ public partial class MainWindow : Window
         {
             Console.WriteLine("Scale change");
         };
+
     }
 
     private void CopyToClipboard(object? sender, EventCommandEventArgs? e)
