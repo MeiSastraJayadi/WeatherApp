@@ -5,6 +5,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WeatherApp.SideBar">
     
+    <UserControl.Resources>
+      <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+          <ResourceInclude Source="avares://WeatherApp/Views/ControlThemes/ButtonTheme.axaml"/>
+        </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+    </UserControl.Resources>
+
     <StackPanel>
 
       <StackPanel.Styles>
@@ -31,6 +39,6 @@
       <TextBlock>Welcome to WeatherApp</TextBlock>
       <Button Classes="Primary" Content="Dashboard"></Button>
       <Button Classes="Danger" Content="Account"></Button>
-      <Button Classes="Default" Content="Settings"></Button>
+      <Button Theme="{StaticResource ButtonTheme}" Classes="Default" Content="Settings"></Button>
     </StackPanel>
 </UserControl>
