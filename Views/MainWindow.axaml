@@ -22,6 +22,15 @@
         <StackPanel Grid.Column="1">
             <TextBlock>Dashboard</TextBlock>
             <TextBlock Text="{Binding Greeting}"/>
+
+            <ListBox ItemsSource="{Binding CountryWeathers}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Country}"></TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
         </StackPanel>
     </Grid>
 
