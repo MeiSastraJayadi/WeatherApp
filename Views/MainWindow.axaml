@@ -23,6 +23,8 @@
             <TextBlock>Dashboard</TextBlock>
             <TextBlock Text="{Binding Greeting}"/>
 
+            <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsLoading}" Margin="0,12,0,0"/>
+
             <ListBox ItemsSource="{Binding CountryWeathers}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

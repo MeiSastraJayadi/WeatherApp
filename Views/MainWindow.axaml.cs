@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.Tracing;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Input.Platform;
 using WeatherApp.ViewModels;
@@ -11,7 +12,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        DataContextChanged += (_, _) => GetCountryWeather();
+        DataContextChanged += async (_, _) => await GetCountryWeather();
 
         Opened += (_,_) =>
         {
@@ -25,9 +26,13 @@ public partial class MainWindow : Window
 
     }
 
-    public void GetCountryWeather()
+    public async Task GetCountryWeather()
     {
         if (DataContext is not MainViewModel viewModel) return;
+
+        viewModel.IsLoading = true;
+
+        await Task.Delay(2000);
 
         viewModel.CountryWeathers = new()
         {
@@ -35,6 +40,8 @@ public partial class MainWindow : Window
             new CountryWeather { Country = "Malaysia" }, 
             new CountryWeather { Country = "Australia" }
         };
+
+        viewModel.IsLoading = false;
     }
 
     private void CopyToClipboard(object? sender, EventCommandEventArgs? e)

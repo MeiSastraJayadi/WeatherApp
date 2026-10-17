@@ -11,4 +11,7 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     public partial ObservableCollection<CountryWeather> CountryWeathers { get; set; } = new();
 
+    [ObservableProperty]
+    public partial bool IsLoading { get; set; }
+
 }
