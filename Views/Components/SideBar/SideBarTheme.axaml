@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:WeatherApp">
+
+    <!--
+        Additional resources
+        Using Control Themes:
+            https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
+        Using Theme Variants:
+            https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
+    -->
+
+    <Design.PreviewWith>
+        <StackPanel Width="400" Spacing="10">
+            <StackPanel Background="{DynamicResource SystemRegionBrush}">
+                <controls:SideBarTheme />
+            </StackPanel>
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type controls:SideBarTheme}"
+                  TargetType="controls:SideBarTheme">
+        <Setter Property="Background" Value="#D3E1F0"></Setter>
+        <Setter Property="CornerRadius" Value="10"></Setter>
+        <Setter Property="Margin" Value="20"></Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Margin="{TemplateBinding Margin}"
+                >
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>
