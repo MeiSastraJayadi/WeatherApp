@@ -7,6 +7,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="WeatherApp.Views.MainWindow"
         x:DataType="vm:MainViewModel"
+        Background="#E7EFF8"
         Icon="/Assets/avalonia-logo.ico"
         Title="WeatherApp">
 
@@ -23,6 +24,12 @@
             <TextBlock>Dashboard</TextBlock>
             <TextBlock Text="{Binding Greeting}"/>
             <TextBlock Text="{Binding CurrentTime^}" />
+
+            <weatherapp:Card>
+                <StackPanel>
+                    <TextBlock>Hello World</TextBlock>
+                </StackPanel>
+            </weatherapp:Card>
 
             <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsLoading}" Margin="0,12,0,0"/>
 
