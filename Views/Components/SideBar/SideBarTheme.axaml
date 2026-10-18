@@ -24,13 +24,20 @@
         <Setter Property="CornerRadius" Value="10"></Setter>
         <Setter Property="Margin" Value="20"></Setter>
         <Setter Property="Padding" Value="10"></Setter>
+        <Setter Property="BoxShadow" Value="6 0 16 0 #334B6580,-2 0 8 0 #CCFFFFFF"></Setter>
         <Setter Property="Template">
-            <ControlTemplate>
+        <ControlTemplate>
                 <Border
                     Background="{TemplateBinding Background}"
                     CornerRadius="{TemplateBinding CornerRadius}"
                     Margin="{TemplateBinding Margin}"
+                    BoxShadow="{TemplateBinding BoxShadow}"
+                    Padding="{TemplateBinding Padding}"
                 >
+                    <ContentPresenter 
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                    />
                 </Border>
             </ControlTemplate>
         </Setter>

@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/Card/Card.axaml"/>
+                <ResourceInclude Source="avares://WeatherApp/Views/Components/SideBar/SideBarTheme.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

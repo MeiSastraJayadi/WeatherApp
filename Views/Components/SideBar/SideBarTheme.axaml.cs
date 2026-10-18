@@ -6,12 +6,12 @@ namespace WeatherApp;
 
 public class SideBarTheme : ContentControl
 {
-    private static readonly StyledProperty<BoxShadows> BoxShadowsProperty = 
+    public static readonly StyledProperty<BoxShadows> BoxShadowProperty = 
         AvaloniaProperty.Register<SideBarTheme, BoxShadows>(nameof(BoxShadow));
     
     public BoxShadows BoxShadow
     {
-        get => GetValue(BoxShadowsProperty);
-        set => SetValue(BoxShadowsProperty, value);
+        get => GetValue(BoxShadowProperty);
+        set => SetValue(BoxShadowProperty, value);
     }
 }
