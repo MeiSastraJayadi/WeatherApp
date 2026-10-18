@@ -1,4 +1,6 @@
+using System;
 using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace WeatherApp.ViewModels;
@@ -13,5 +15,9 @@ public partial class MainViewModel : ViewModelBase
 
     [ObservableProperty]
     public partial bool IsLoading { get; set; }
+
+    public IObservable<string> CurrentTime { get; } =
+        Observable.Interval(TimeSpan.FromSeconds(1))
+            .Select(_ => DateTime.Now.ToString("HH:mm:ss"));
 
 }

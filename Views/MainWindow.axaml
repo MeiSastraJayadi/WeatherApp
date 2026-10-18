@@ -22,6 +22,7 @@
         <StackPanel Grid.Column="1">
             <TextBlock>Dashboard</TextBlock>
             <TextBlock Text="{Binding Greeting}"/>
+            <TextBlock Text="{Binding CurrentTime^}" />
 
             <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsLoading}" Margin="0,12,0,0"/>
 
