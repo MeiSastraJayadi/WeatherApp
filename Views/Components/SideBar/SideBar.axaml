@@ -19,7 +19,6 @@
     <local:SideBarTheme>
       <StackPanel>
 
-        <TextBlock>Welcome to WeatherApp</TextBlock>
         <Button Classes="Primary" Content="Dashboard"
                 Click="Click_Button"></Button>
         <Button Classes="Danger" Content="Account"

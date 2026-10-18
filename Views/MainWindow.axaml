@@ -18,29 +18,10 @@
     </Design.DataContext>
 
 
-    <Grid ColumnDefinitions="220,*">
+    <Grid ColumnDefinitions="170,*">
         <weatherapp:SideBar Grid.Column="0"></weatherapp:SideBar>
         <StackPanel Grid.Column="1">
-            <TextBlock>Dashboard</TextBlock>
-            <TextBlock Text="{Binding Greeting}"/>
-            <TextBlock Text="{Binding CurrentTime^}" />
-
-            <weatherapp:Card Margin="20">
-                <StackPanel>
-                    <TextBlock>Hello World</TextBlock>
-                </StackPanel>
-            </weatherapp:Card>
-
-            <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsLoading}" Margin="0,12,0,0"/>
-
-            <ListBox ItemsSource="{Binding CountryWeathers}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Country}"></TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-
+            
         </StackPanel>
     </Grid>
 
