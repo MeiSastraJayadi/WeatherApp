@@ -20,4 +20,16 @@ public partial class MainViewModel : ViewModelBase
         Observable.Interval(TimeSpan.FromSeconds(1))
             .Select(_ => DateTime.Now.ToString("HH:mm:ss"));
 
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(IsHomeActive))]
+    [NotifyPropertyChangedFor(nameof(IsForecastActive))]
+    [NotifyPropertyChangedFor(nameof(IsMapActive))]
+    [NotifyPropertyChangedFor(nameof(IsSettingActive))]
+    public partial string ActivePage { get; set; }
+
+    public bool IsHomeActive => ActivePage == "Home";
+    public bool IsForecastActive => ActivePage == "Forecast";
+    public bool IsMapActive => ActivePage == "Map";
+    public bool IsSettingActive => ActivePage == "Setting";
+
 }

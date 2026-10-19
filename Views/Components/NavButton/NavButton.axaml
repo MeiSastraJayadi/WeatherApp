@@ -20,9 +20,23 @@
 
     <ControlTheme x:Key="{x:Type controls:NavButton}"
                   TargetType="controls:NavButton">
+        <Style Selector="^.active">
+            <Setter Property="Background" Value="#C5D7EA" ></Setter>
+            <Setter Property="BoxShadow" Value="2 3 8 0 #334B6580, -2 -2 6 0 #CCFFFFFF"></Setter>
+        </Style>
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Foreground" Value="#203955" />
         <Setter Property="Template">
             <ControlTemplate>
-                <TextBlock Text="Templated Control" />
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BoxShadow="{TemplateBinding BoxShadow}"
+                >
+                    <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                        />
+                </Border>
             </ControlTemplate>
         </Setter>
     </ControlTheme>
