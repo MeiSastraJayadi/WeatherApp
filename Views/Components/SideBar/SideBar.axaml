@@ -10,13 +10,10 @@
 
     <local:SideBarTheme>
       <StackPanel>
-
-        <Button Classes="Primary" Content="Dashboard"
-                Click="Click_Button"></Button>
-        <Button Classes="Danger" Content="Account"
-                Click="Click_Button"></Button>
-        <Button Content="Settings"
-                Click="Click_Button"></Button>
+        <local:NavButton Content="Home" />
+        <local:NavButton Content="Forecast" />
+        <local:NavButton Content="Map" />
+        <local:NavButton Content="Setting"/>
       </StackPanel>
     </local:SideBarTheme>
 </UserControl>

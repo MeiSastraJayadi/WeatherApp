@@ -3,6 +3,7 @@ using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Input.Platform;
+using Avalonia.Interactivity;
 using WeatherApp.ViewModels;
 
 namespace WeatherApp.Views;
@@ -52,4 +53,16 @@ public partial class MainWindow : Window
 
         IClipboard? clipboard = windows.Clipboard;
     }
+
+    public void Click_Nav(object? sender, RoutedEventArgs? e)
+    {
+        if (DataContext is not MainViewModel viewModel) return;
+
+        if (sender is Button button)
+        {
+            viewModel.ActivePage = $"{button.Content}";
+        }
+
+    }
+
 }

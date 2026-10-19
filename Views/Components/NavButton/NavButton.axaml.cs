@@ -14,4 +14,5 @@ public class NavButton : Button
         get => GetValue(BoxShadowProperty);
         set => SetValue(BoxShadowProperty, value);
     }
+
 }

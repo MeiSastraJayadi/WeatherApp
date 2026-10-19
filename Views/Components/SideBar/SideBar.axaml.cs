@@ -20,4 +20,15 @@ public partial class SideBar : UserControl
             viewModel.Greeting = $"You just clicked {button.Content}";
         }
     }
+
+    public void Click_Nav(object? sender, RoutedEventArgs? e)
+    {
+        if (DataContext is not MainViewModel viewModel) return;
+
+        if (sender is Button button)
+        {
+            viewModel.ActivePage = $"{button.Content}";
+        }
+
+    }
 }
