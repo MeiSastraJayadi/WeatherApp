@@ -18,7 +18,7 @@
     </Design.DataContext>
 
 
-    <Grid ColumnDefinitions="190,*">
+    <Grid ColumnDefinitions="195,*">
         <weatherapp:SideBar Grid.Column="0"></weatherapp:SideBar>
         <StackPanel Grid.Column="1">
             
