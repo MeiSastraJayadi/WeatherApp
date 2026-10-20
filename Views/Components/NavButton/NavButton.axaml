@@ -26,16 +26,26 @@
         </Style>
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Foreground" Value="#203955" />
+        <Setter Property="Margin" Value="5 10" />
+        <Setter Property="Padding" Value="10 6" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
                     Background="{TemplateBinding Background}"
                     BoxShadow="{TemplateBinding BoxShadow}"
                 >
-                    <ContentPresenter
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        Spacing="10"
+                    >
+                        <PathIcon Data="{TemplateBinding Icon}" Width="18" Height="18" />
+                        <ContentPresenter
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
-                        />
+                            VerticalAlignment="Center"
+                            />
+                    </StackPanel>
                 </Border>
             </ControlTemplate>
         </Setter>

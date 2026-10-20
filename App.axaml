@@ -15,6 +15,7 @@
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/Card/Card.axaml"/>
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/SideBar/SideBarTheme.axaml"/>
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/NavButton/NavButton.axaml"/>
+                <ResourceInclude Source="avares://WeatherApp/Views/Components/Icons/Icon.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

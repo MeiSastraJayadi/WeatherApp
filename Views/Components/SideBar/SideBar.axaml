@@ -6,14 +6,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WeatherApp.SideBar"
+             Design.Width="220"
              x:DataType="vm:MainViewModel">
 
     <local:SideBarTheme>
       <StackPanel>
-        <local:NavButton Content="Home" />
-        <local:NavButton Content="Forecast" />
-        <local:NavButton Content="Map" />
-        <local:NavButton Content="Setting"/>
+        <local:NavButton Icon="{StaticResource IconHome}" Content="Home" />
+        <local:NavButton Icon="{StaticResource IconForecast}" Content="Forecast" />
+        <local:NavButton Icon="{StaticResource IconMap}" Content="Map" />
+        <local:NavButton Icon="{StaticResource IconSettings}" Content="Setting"/>
       </StackPanel>
     </local:SideBarTheme>
 </UserControl>

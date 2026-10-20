@@ -54,15 +54,4 @@ public partial class MainWindow : Window
         IClipboard? clipboard = windows.Clipboard;
     }
 
-    public void Click_Nav(object? sender, RoutedEventArgs? e)
-    {
-        if (DataContext is not MainViewModel viewModel) return;
-
-        if (sender is Button button)
-        {
-            viewModel.ActivePage = $"{button.Content}";
-        }
-
-    }
-
 }
