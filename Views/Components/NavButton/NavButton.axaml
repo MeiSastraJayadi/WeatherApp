@@ -26,13 +26,16 @@
         </Style>
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Foreground" Value="#203955" />
-        <Setter Property="Margin" Value="5 10" />
+        <Setter Property="Margin" Value="0 5" />
         <Setter Property="Padding" Value="10 6" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
                     Background="{TemplateBinding Background}"
                     BoxShadow="{TemplateBinding BoxShadow}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Margin="{TemplateBinding Margin}"
+                    Padding="{TemplateBinding Padding}"
                 >
                     <StackPanel 
                         Orientation="Horizontal" 

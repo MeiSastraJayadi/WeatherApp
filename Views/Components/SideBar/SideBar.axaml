@@ -11,10 +11,30 @@
 
     <local:SideBarTheme>
       <StackPanel>
-        <local:NavButton Icon="{StaticResource IconHome}" Content="Home" />
-        <local:NavButton Icon="{StaticResource IconForecast}" Content="Forecast" />
-        <local:NavButton Icon="{StaticResource IconMap}" Content="Map" />
-        <local:NavButton Icon="{StaticResource IconSettings}" Content="Setting"/>
+        
+        <local:NavButton 
+          Click="Click_Nav" 
+          Classes.active="{Binding IsHomeActive}"
+          Icon="{StaticResource IconHome}" 
+          Content="Home" />
+
+        <local:NavButton 
+          Click="Click_Nav" 
+          Classes.active="{Binding IsForecastActive}"
+          Icon="{StaticResource IconForecast}" 
+          Content="Forecast" />
+
+        <local:NavButton 
+          Click="Click_Nav" 
+          Classes.active="{Binding IsMapActive}"
+          Icon="{StaticResource IconMap}" 
+          Content="Map" />
+
+        <local:NavButton 
+          Click="Click_Nav"
+          Classes.active="{Binding IsSettingActive}" 
+          Icon="{StaticResource IconSettings}" 
+          Content="Setting"/>
       </StackPanel>
     </local:SideBarTheme>
 </UserControl>
