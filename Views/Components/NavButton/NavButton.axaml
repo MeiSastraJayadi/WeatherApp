@@ -24,6 +24,9 @@
             <Setter Property="Background" Value="#C5D7EA" ></Setter>
             <Setter Property="BoxShadow" Value="2 3 8 0 #334B6580, -2 -2 6 0 #CCFFFFFF"></Setter>
         </Style>
+        <Style Selector="^:pointerover">
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Foreground" Value="#203955" />
         <Setter Property="Margin" Value="0 5" />
@@ -42,11 +45,12 @@
                         VerticalAlignment="Center"
                         Spacing="10"
                     >
-                        <PathIcon Data="{TemplateBinding Icon}" Width="18" Height="18" />
+                        <PathIcon Foreground="{TemplateBinding Foreground}" Data="{TemplateBinding Icon}" Width="18" Height="18" />
                         <ContentPresenter
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             VerticalAlignment="Center"
+                            Foreground="{TemplateBinding Foreground}"
                             />
                     </StackPanel>
                 </Border>

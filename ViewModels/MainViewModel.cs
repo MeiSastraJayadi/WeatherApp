@@ -25,7 +25,7 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(IsForecastActive))]
     [NotifyPropertyChangedFor(nameof(IsMapActive))]
     [NotifyPropertyChangedFor(nameof(IsSettingActive))]
-    public partial string ActivePage { get; set; }
+    public partial string ActivePage { get; set; } = "Home";
 
     public bool IsHomeActive => ActivePage == "Home";
     public bool IsForecastActive => ActivePage == "Forecast";
