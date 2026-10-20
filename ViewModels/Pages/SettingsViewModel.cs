@@ -1,6 +1,6 @@
 ﻿namespace WeatherApp.ViewModels.Pages;
 
-public class SettingsViewModel
+public class SettingsViewModel : PageViewModelBase
 {
-
+    
 }

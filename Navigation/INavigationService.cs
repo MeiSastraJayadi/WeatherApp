@@ -10,6 +10,6 @@ public interface INavigationService : INotifyPropertyChanged
     PageViewModelBase? CurrentPage { get; }
     AppRoute? CurrentRoute { get; }
 
-    Task NavigateToAsync(AppRoute? route, object? parameter = null);
+    Task NavigateToAsync(AppRoute route, object? parameter = null);
 
 }
