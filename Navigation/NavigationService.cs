@@ -9,6 +9,10 @@ namespace WeatherApp.Navigation;
 
 public partial class NavigationService : ObservableObject, INavigationService
 {
+    private readonly IServiceProvider _services;
+
+    public NavigationService(IServiceProvider services) => _services = services;
+
     private static readonly IDictionary<AppRoute, Type> Routes = 
         new Dictionary<AppRoute, Type>
         {
@@ -18,7 +22,6 @@ public partial class NavigationService : ObservableObject, INavigationService
           [AppRoute.Settings] = typeof(SettingsViewModel)  
         };
 
-    private readonly IServiceProvider _services = null!;
 
     [ObservableProperty]
     public partial PageViewModelBase? CurrentPage { get; set; }
