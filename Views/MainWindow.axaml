@@ -11,18 +11,18 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="WeatherApp">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
-    </Design.DataContext>
-
 
     <Grid ColumnDefinitions="195,*">
         <weatherapp:SideBar Grid.Column="0"></weatherapp:SideBar>
-        <StackPanel Grid.Column="1">
-            
-        </StackPanel>
+        
+         <TransitioningContentControl
+                Grid.Column="1"
+                Content="{Binding Navigation.CurrentPage}"
+            >
+            <TransitioningContentControl.PageTransition>
+                <CrossFade Duration="0:0:0.2" />
+            </TransitioningContentControl.PageTransition>
+         </TransitioningContentControl>
     </Grid>
 
 </Window>
