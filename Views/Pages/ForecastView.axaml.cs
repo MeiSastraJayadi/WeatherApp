@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace WeatherApp;
+namespace WeatherApp.Views.Pages;
 
 public partial class ForecastView : UserControl
 {
