@@ -29,20 +29,10 @@ public partial class MainWindow : Window
 
     public async Task GetCountryWeather()
     {
-        if (DataContext is not MainViewModel viewModel) return;
-
-        viewModel.IsLoading = true;
+        
 
         await Task.Delay(2000);
 
-        viewModel.CountryWeathers = new()
-        {
-            new CountryWeather { Country = "Indonesia" }, 
-            new CountryWeather { Country = "Malaysia" }, 
-            new CountryWeather { Country = "Australia" }
-        };
-
-        viewModel.IsLoading = false;
     }
 
     private void CopyToClipboard(object? sender, EventCommandEventArgs? e)

@@ -1,35 +1,28 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using WeatherApp.Navigation;
 
 namespace WeatherApp.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    [ObservableProperty]
-    public partial string Greeting { get; set; } = "Welcome to WeatherApp!";
+    
+    public INavigationService Navigation { get; }
 
-    [ObservableProperty]
-    public partial ObservableCollection<CountryWeather> CountryWeathers { get; set; } = new();
+    public MainViewModel(INavigationService navigation)
+    {
+        Navigation = navigation;
+    }
 
-    [ObservableProperty]
-    public partial bool IsLoading { get; set; }
+    [RelayCommand]
+    private Task NavigateAsync(AppRoute route)
+        => Navigation.NavigateToAsync(route);
 
-    public IObservable<string> CurrentTime { get; } =
-        Observable.Interval(TimeSpan.FromSeconds(1))
-            .Select(_ => DateTime.Now.ToString("HH:mm:ss"));
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsHomeActive))]
-    [NotifyPropertyChangedFor(nameof(IsForecastActive))]
-    [NotifyPropertyChangedFor(nameof(IsMapActive))]
-    [NotifyPropertyChangedFor(nameof(IsSettingActive))]
-    public partial string ActivePage { get; set; } = "Home";
-
-    public bool IsHomeActive => ActivePage == "Home";
-    public bool IsForecastActive => ActivePage == "Forecast";
-    public bool IsMapActive => ActivePage == "Map";
-    public bool IsSettingActive => ActivePage == "Setting";
+    public Task InitializeAsync()
+        => Navigation.NavigateToAsync(AppRoute.Home);
 
 }

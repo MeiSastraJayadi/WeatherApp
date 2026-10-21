@@ -3,6 +3,7 @@
              xmlns:vm="using:WeatherApp.ViewModels"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="using:WeatherApp"
+             xmlns:nav="using:WeatherApp.Navigation"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WeatherApp.SideBar"
@@ -13,26 +14,46 @@
       <StackPanel>
         
         <local:NavButton 
-          Click="Click_Nav" 
-          Classes.active="{Binding IsHomeActive}"
+          Command="{Binding NavigateCommand}"
+          CommandParameter="{x:Static nav:AppRoute.Home}"
           Icon="{StaticResource IconHome}" 
+          Classes.active="{
+            Binding Navigation.CurrentRoute, 
+            Converter={StaticResource EnumEqualsConverter},
+            ConverterParameter={x:Static nav:AppRoute.Home}
+          }"
           Content="Home" />
 
         <local:NavButton 
-          Click="Click_Nav" 
-          Classes.active="{Binding IsForecastActive}"
+          Command="{Binding NavigateCommand}"
+          CommandParameter="{x:Static nav:AppRoute.Forecast}"
+          Classes.active="{
+            Binding Navigation.CurrentRoute, 
+            Converter={StaticResource EnumEqualsConverter},
+            ConverterParameter={x:Static nav:AppRoute.Forecast}
+          }"
           Icon="{StaticResource IconForecast}" 
           Content="Forecast" />
 
         <local:NavButton 
-          Click="Click_Nav" 
-          Classes.active="{Binding IsMapActive}"
+          Command="{Binding NavigateCommand}"
+          CommandParameter="{x:Static nav:AppRoute.Map}"
+          Classes.active="{
+            Binding Navigation.CurrentRoute, 
+            Converter={StaticResource EnumEqualsConverter},
+            ConverterParameter={x:Static nav:AppRoute.Map}
+          }"
           Icon="{StaticResource IconMap}" 
           Content="Map" />
 
         <local:NavButton 
-          Click="Click_Nav"
-          Classes.active="{Binding IsSettingActive}" 
+          Command="{Binding NavigateCommand}"
+          CommandParameter="{x:Static nav:AppRoute.Settings}"
+          Classes.active="{
+            Binding Navigation.CurrentRoute, 
+            Converter={StaticResource EnumEqualsConverter},
+            ConverterParameter={x:Static nav:AppRoute.Settings}
+          }"
           Icon="{StaticResource IconSettings}" 
           Content="Setting"/>
       </StackPanel>
