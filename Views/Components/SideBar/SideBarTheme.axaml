@@ -23,7 +23,7 @@
         <Setter Property="Background" Value="#D3E1F0"></Setter>
         <Setter Property="CornerRadius" Value="10"></Setter>
         <Setter Property="Margin" Value="10"></Setter>
-        <Setter Property="Padding" Value="10"></Setter>
+        <Setter Property="Padding" Value="5 10"></Setter>
         <Setter Property="BoxShadow" Value="6 0 16 0 #334B6580,-2 0 8 0 #CCFFFFFF"></Setter>
         <Setter Property="Template">
         <ControlTemplate>

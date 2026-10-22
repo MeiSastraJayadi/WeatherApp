@@ -22,14 +22,14 @@
                   TargetType="controls:NavButton">
         <Style Selector="^.active">
             <Setter Property="Background" Value="#C5D7EA" ></Setter>
-            <Setter Property="BoxShadow" Value="2 3 8 0 #334B6580, -4 -1 6 0 #CCFFFFFF"></Setter>
+            <Setter Property="BoxShadow" Value="2 3 10 0 #334B6580, -2 -1 6 0 #CCFFFFFF"></Setter>
         </Style>
         <Style Selector="^:pointerover">
             <Setter Property="Cursor" Value="Hand" />
         </Style>
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Foreground" Value="#203955" />
-        <Setter Property="Margin" Value="2 5" />
+        <Setter Property="Margin" Value="4 5" />
         <Setter Property="Padding" Value="10 6" />
         <Setter Property="Template">
             <ControlTemplate>

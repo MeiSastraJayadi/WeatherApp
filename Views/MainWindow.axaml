@@ -12,7 +12,7 @@
         Title="WeatherApp">
 
 
-    <Grid ColumnDefinitions="195,*">
+    <Grid ColumnDefinitions="200,*">
         <weatherapp:SideBar Grid.Column="0"></weatherapp:SideBar>
         
          <TransitioningContentControl
