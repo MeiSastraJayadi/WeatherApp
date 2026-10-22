@@ -7,6 +7,10 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="WeatherApp.Views.MainWindow"
         x:DataType="vm:MainViewModel"
+        Width="700" Height="500"
+        CanResize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterScreen"
         Background="#E7EFF8"
         Icon="/Assets/avalonia-logo.ico"
         Title="WeatherApp">
@@ -17,7 +21,7 @@
         
          <TransitioningContentControl
                 Grid.Column="1"
-                Padding="20 20 10 10"
+                Padding="10 20 10 10"
                 Content="{Binding Navigation.CurrentPage}"
             >
             <TransitioningContentControl.PageTransition>

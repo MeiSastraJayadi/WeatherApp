@@ -10,7 +10,7 @@
 
     <StackPanel Spacing="10">
 
-      <StackPanel Spacing="4">
+      <StackPanel Margin="5 0 0 0" Spacing="4">
         <StackPanel Orientation="Horizontal" Spacing="8">
           <PathIcon Foreground="#203955" 
             Height="15" Width="15" 
@@ -20,14 +20,23 @@
         <TextBlock Foreground="#45596F" FontSize="10"  Text="{Binding CurrentTime^}" />
       </StackPanel>
 
-      <weatherapp:Card>
-        <StackPanel Orientation="Horizontal">
+      <weatherapp:Card Margin="5 10 10 10" Padding="10 0">
+        <StackPanel Spacing="20" HorizontalAlignment="Left" Margin="10 0 0 0" VerticalAlignment="Center" Orientation="Horizontal">
           <Image 
-            Source="avares://WeatherApp/Assets/Icons/cloudy_night.png"
-            Width="120"
-            Height="120"
+            Source="avares://WeatherApp/Assets/Icons/partly_cloudy.png"
+            Width="220"
+            Height="220"
             Stretch="Uniform"
           />
+          <StackPanel VerticalAlignment="Center" Spacing="6" HorizontalAlignment="Center">
+              <StackPanel 
+                Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBlock Text="28" Foreground="#45596F" FontWeight="SemiBold" FontSize="40" />
+                <TextBlock Text="℃" Foreground="#45596F" FontWeight="SemiBold" FontSize="20" Margin="4 0 0 0 " />
+              </StackPanel>
+              <TextBlock TextAlignment="Center" Text="Partly Cloud" Foreground="#45596F" FontSize="20" />
+              <TextBlock Text="Feels like 28°" TextAlignment="Center" FontWeight="Light" Foreground="#45596F" FontSize="12" />
+          </StackPanel>
         </StackPanel>
       </weatherapp:Card>
 
