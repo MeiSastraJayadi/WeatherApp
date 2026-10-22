@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -18,8 +19,9 @@ public partial class HomeViewModel : PageViewModelBase
     public partial bool IsLoading { get; set; }
 
     public IObservable<string> CurrentTime { get; } =
-        Observable.Interval(TimeSpan.FromSeconds(1))
-            .Select(_ => DateTime.Now.ToString("HH:mm:ss"));
+         Observable.Timer(TimeSpan.Zero, TimeSpan.FromMinutes(1))
+        .Select(_ =>
+            $"Today, {DateTime.Now.ToString("dd MMM yyyy - HH:mm", CultureInfo.InvariantCulture)}");
 
     public override async Task OnNavigatedToAsync(object? parameter)
     {

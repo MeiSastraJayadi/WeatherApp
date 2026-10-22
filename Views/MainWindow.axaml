@@ -17,6 +17,7 @@
         
          <TransitioningContentControl
                 Grid.Column="1"
+                Padding="20 20 10 10"
                 Content="{Binding Navigation.CurrentPage}"
             >
             <TransitioningContentControl.PageTransition>
