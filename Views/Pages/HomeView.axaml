@@ -23,7 +23,7 @@
       <weatherapp:Card>
         <StackPanel Orientation="Horizontal">
           <Image 
-            Source="avares://WeatherApp/Assets/Icons/sunny.png"
+            Source="avares://WeatherApp/Assets/Icons/cloudy_night.png"
             Width="120"
             Height="120"
             Stretch="Uniform"
