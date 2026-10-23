@@ -21,23 +21,56 @@
       </StackPanel>
 
       <weatherapp:Card Margin="5 10 10 10" Padding="10 0">
-        <StackPanel Spacing="20" HorizontalAlignment="Left" Margin="10 0 0 0" VerticalAlignment="Center" Orientation="Horizontal">
-          <Image 
-            Source="avares://WeatherApp/Assets/Icons/partly_cloudy.png"
-            Width="220"
-            Height="220"
-            Stretch="Uniform"
-          />
-          <StackPanel VerticalAlignment="Center" Spacing="6" HorizontalAlignment="Center">
-              <StackPanel 
-                Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <TextBlock Text="28" Foreground="#45596F" FontWeight="SemiBold" FontSize="40" />
-                <TextBlock Text="℃" Foreground="#45596F" FontWeight="SemiBold" FontSize="20" Margin="4 0 0 0 " />
-              </StackPanel>
-              <TextBlock TextAlignment="Center" Text="Partly Cloud" Foreground="#45596F" FontSize="20" />
-              <TextBlock Text="Feels like 28°" TextAlignment="Center" FontWeight="Light" Foreground="#45596F" FontSize="12" />
+
+        <StackPanel Spacing="2" >
+
+          <StackPanel Spacing="20" HorizontalAlignment="Left" Margin="10 0 0 0" VerticalAlignment="Center" Orientation="Horizontal">
+            <Image 
+              Source="avares://WeatherApp/Assets/Icons/partly_cloudy.png"
+              Width="220"
+              Height="180"
+              Stretch="Uniform"
+            />
+            <StackPanel VerticalAlignment="Center" Spacing="6" HorizontalAlignment="Center">
+                <StackPanel 
+                  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                  <TextBlock Text="28" Foreground="#45596F" FontWeight="SemiBold" FontSize="40" />
+                  <TextBlock Text="℃" Foreground="#45596F" FontWeight="SemiBold" FontSize="20" Margin="4 0 0 0 " />
+                </StackPanel>
+                <TextBlock TextAlignment="Center" Text="Partly Cloud" Foreground="#45596F" FontSize="20" />
+                <TextBlock Text="Feels like 28°" TextAlignment="Center" FontWeight="Light" Foreground="#45596F" FontSize="12" />
+            </StackPanel>
           </StackPanel>
+
+          <Grid ColumnSpacing="8" ColumnDefinitions="*,*,*" Margin="0 0 0 20">
+            <StackPanel Spacing="5" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+              <PathIcon Height="20" Width="20" Foreground="#45596F" Data="{StaticResource IconHumidity}" />
+              <StackPanel Margin="3 0 0 0">
+                  <TextBlock Text="Humidity" FontWeight="Light" Foreground="#45596F" FontSize="10" />
+                  <TextBlock Text="78%" Foreground="#45596F" FontSize="14" />
+              </StackPanel>
+            </StackPanel>
+
+            <StackPanel Spacing="5" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+              <PathIcon Height="20" Width="20" Foreground="#45596F" Data="{StaticResource IconWind}" />
+              <StackPanel Margin="3 0 0 0">
+                  <TextBlock Text="Wind" FontWeight="Light" Foreground="#45596F" FontSize="10" />
+                  <TextBlock Text="12 km/h" Foreground="#45596F" FontSize="14" />
+              </StackPanel>
+            </StackPanel>
+
+            <StackPanel Spacing="5" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+              <PathIcon Height="20" Width="20" Foreground="#45596F" Data="{StaticResource IconPressure}" />
+              <StackPanel Margin="3 0 0 0">
+                  <TextBlock Text="Pressure" FontWeight="Light" Foreground="#45596F" FontSize="10" />
+                  <TextBlock Text="1012 hPa" Foreground="#45596F" FontSize="14" />
+              </StackPanel>
+            </StackPanel>
+
+          </Grid>
         </StackPanel>
+
+
       </weatherapp:Card>
 
     </StackPanel>
