@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:WeatherApp.ViewModels.Pages"
              xmlns:weatherapp="using:WeatherApp"
+             xmlns:models="using:WeatherApp.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WeatherApp.Views.Pages.HomeView"
              x:DataType="vm:HomeViewModel">
@@ -71,6 +72,29 @@
         </StackPanel>
 
 
+      </weatherapp:Card>
+
+      <weatherapp:Card Margin="5 10 10 10" Padding="10 0">  
+        <ItemsControl ItemsSource="{Binding Forecasts}">
+
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Spacing="8" Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="models:DailyForecast">
+              <weatherapp:WeatherList
+                Day="{Binding Day}"
+                Image="{Binding Icon}"
+                MinTemperature="{Binding MinTemperature}"
+                MaxTemperature="{Binding MaxTemperature}"
+              />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
       </weatherapp:Card>
 
     </StackPanel>
