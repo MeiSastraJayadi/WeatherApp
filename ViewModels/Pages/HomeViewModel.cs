@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using WeatherApp.Models;
 
 namespace WeatherApp.ViewModels.Pages;
 
@@ -39,5 +40,14 @@ public partial class HomeViewModel : PageViewModelBase
 
         IsLoading = false;
     }
+
+    [ObservableProperty]
+    public partial ObservableCollection<DailyForecast> Forecasts { get; set; } = new()
+    {
+      new DailyForecast { Day = "Today", Icon = "avares://WeatherApp/Assets/Icons/sunny.png", MaxTemperature = 31, MinTemperature = 24 },  
+      new DailyForecast { Day = "Monday", Icon = "avares://WeatherApp/Assets/Icons/heavy_rain.png", MaxTemperature = 31, MinTemperature = 24 },
+      new DailyForecast { Day = "Tuesday", Icon = "avares://WeatherApp/Assets/Icons/thunderstorm.png", MaxTemperature = 31, MinTemperature = 24 },
+      new DailyForecast { Day = "Wednesday", Icon = "avares://WeatherApp/Assets/Icons/sunny.png", MaxTemperature = 31, MinTemperature = 24 }      
+    };
 
 }
