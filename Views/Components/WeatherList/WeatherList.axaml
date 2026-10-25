@@ -30,13 +30,13 @@
                     CornerRadius="{TemplateBinding CornerRadius}"
                     Background="{TemplateBinding Background}"
                 >
-                    <StackPanel Orientation="Vertical" Spacing="4">
-                        <TextBlock Text="{TemplateBinding Day}" />
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="4">
+                        <TextBlock Foreground="#45596F" FontSize="10" TextAlignment="Center" FontWeight="SemiBold" Text="{TemplateBinding Day}" />
                         <Image Source="{TemplateBinding Image}" Width="50" Height="50" Stretch="Uniform" />
-                        <StackPanel Orientation="Horizontal" Spacing="4">
-                            <TextBlock Text="{TemplateBinding MaxTemperature}" />
-                            <TextBlock Text="/" />
-                            <TextBlock Text="{TemplateBinding MinTemperature}" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+                            <TextBlock Foreground="#45596F" FontSize="8" Text="{TemplateBinding MaxTemperature}" />
+                            <TextBlock Foreground="#45596F" FontSize="8" Text="/" />
+                            <TextBlock Foreground="#45596F" FontSize="8" Text="{TemplateBinding MinTemperature}" />
                         </StackPanel>
                     </StackPanel>
                 </Border>

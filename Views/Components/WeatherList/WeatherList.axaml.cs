@@ -9,8 +9,8 @@ public class WeatherList : ContentControl
     public static readonly StyledProperty<string> DayProperty = 
         AvaloniaProperty.Register<WeatherList, string>(nameof(Day), string.Empty);
 
-    public static readonly StyledProperty<IImage> ImageProperty = 
-        AvaloniaProperty.Register<WeatherList, IImage>(nameof(Image));
+    public static readonly StyledProperty<IImage?> ImageProperty = 
+        AvaloniaProperty.Register<WeatherList, IImage?>(nameof(Image));
 
     public static readonly StyledProperty<int> MinTemperatureProperty = 
         AvaloniaProperty.Register<WeatherList, int>(nameof(MinTemperature), 0);
@@ -24,7 +24,7 @@ public class WeatherList : ContentControl
         set => SetValue(DayProperty, value);
     }
 
-    public IImage Image
+    public IImage? Image
     {
         get => GetValue(ImageProperty); 
         set => SetValue(ImageProperty, value); 

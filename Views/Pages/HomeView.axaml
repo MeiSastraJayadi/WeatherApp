@@ -74,7 +74,7 @@
 
       </weatherapp:Card>
 
-      <weatherapp:Card Margin="5 10 10 10" Padding="10 0">  
+      <weatherapp:Card Margin="5 0 10 10" Padding="10 0">  
         <ItemsControl ItemsSource="{Binding Forecasts}">
 
           <ItemsControl.ItemsPanel>

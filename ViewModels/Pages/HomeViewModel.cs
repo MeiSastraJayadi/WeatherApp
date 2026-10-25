@@ -3,6 +3,8 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using CommunityToolkit.Mvvm.ComponentModel;
 using WeatherApp.Models;
 
@@ -41,13 +43,16 @@ public partial class HomeViewModel : PageViewModelBase
         IsLoading = false;
     }
 
+    private static Bitmap LoadImage(string name) => 
+        new (AssetLoader.Open(new Uri($"avares://WeatherApp/Assets/Icons/{name}.png")));
+
     [ObservableProperty]
     public partial ObservableCollection<DailyForecast> Forecasts { get; set; } = new()
     {
-      new DailyForecast { Day = "Today", Icon = "avares://WeatherApp/Assets/Icons/sunny.png", MaxTemperature = 31, MinTemperature = 24 },  
-      new DailyForecast { Day = "Monday", Icon = "avares://WeatherApp/Assets/Icons/heavy_rain.png", MaxTemperature = 31, MinTemperature = 24 },
-      new DailyForecast { Day = "Tuesday", Icon = "avares://WeatherApp/Assets/Icons/thunderstorm.png", MaxTemperature = 31, MinTemperature = 24 },
-      new DailyForecast { Day = "Wednesday", Icon = "avares://WeatherApp/Assets/Icons/sunny.png", MaxTemperature = 31, MinTemperature = 24 }      
+      new DailyForecast { Day = "Today", Icon = LoadImage("sunny"), MaxTemperature = 31, MinTemperature = 24 },  
+      new DailyForecast { Day = "Monday", Icon = LoadImage("heavy_rain"), MaxTemperature = 31, MinTemperature = 24 },
+      new DailyForecast { Day = "Tuesday", Icon = LoadImage("thunderstorm"), MaxTemperature = 31, MinTemperature = 24 },
+      new DailyForecast { Day = "Wednesday", Icon = LoadImage("heavy_rain"), MaxTemperature = 31, MinTemperature = 24 }      
     };
 
 }
