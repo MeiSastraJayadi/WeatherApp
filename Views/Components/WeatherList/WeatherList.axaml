@@ -20,9 +20,30 @@
 
     <ControlTheme x:Key="{x:Type controls:WeatherList}"
                   TargetType="controls:WeatherList">
+        <Setter Property="Background" Value="#39FFFFFF" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Image" Value="{DynamicResource Image}" />
+        <Setter Property="MaxTemperature" Value="{DynamicResource MaxTemperature}" />
+        <Setter Property="MinTemperature" Value="{DynamicResource MinTemperature}" />
+        <Setter Property="Day" Value="{DynamicResource Day}" />
         <Setter Property="Template">
             <ControlTemplate>
-                <TextBlock Text="Templated Control" />
+                <Border
+                    Padding="{TemplateBinding Padding}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Background="{TemplateBinding Background}"
+                >
+                    <StackPanel Orientation="Vertical" Spacing="4">
+                        <TextBlock Text="{TemplateBinding Day}" />
+                        <Image Source="{TemplateBinding Image}" />
+                        <StackPanel Orientation="Horizontal" Spacing="4">
+                            <TextBlock Text="{TemplateBinding MaxTemperature}" />
+                            <TextBlock Text="/" />
+                            <TextBlock Text="{TemplateBinding MinTemperature}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
             </ControlTemplate>
         </Setter>
     </ControlTheme>
