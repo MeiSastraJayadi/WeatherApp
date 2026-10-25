@@ -16,6 +16,7 @@
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/Card/Card.axaml"/>
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/SideBar/SideBarTheme.axaml"/>
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/NavButton/NavButton.axaml"/>
+                <ResourceInclude Source="avares://WeatherApp/Views/Components/WeatherList/WheatherList.axaml"/>
                 <ResourceInclude Source="avares://WeatherApp/Views/Components/Icons/Icon.axaml"/>
             </ResourceDictionary.MergedDictionaries>
             <converters:EnumConverter x:Key="EnumEqualsConverter" />
