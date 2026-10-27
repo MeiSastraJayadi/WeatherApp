@@ -62,5 +62,34 @@
       </Grid>
 
       <TextBlock Text="Next 7 Days" Foreground="#45596F" FontWeight="SemiBold" FontSize="25" Margin="0 10" />
+      <ItemsControl ItemsSource="{Binding Forecasts}">
+        
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel></StackPanel>
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <weatherapp:Card>
+              <Grid ColumnDefinitions="2*,*,*,2*">
+                <TextBlock Grid.Column="0" Text="{Binding Day}" />
+                <Image Grid.Column="1" Source="{Binding Icon}" Width="10" Height="10" />
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                  <TextBlock Text="{Binding MinTemperature}" />
+                  <TextBlock Text="/" />
+                  <TextBlock Text="{Binding MaxTemperature}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock Text="{Binding Humidity}" />
+                </StackPanel>
+              </Grid>
+            </weatherapp:Card>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+
+      </ItemsControl>
+
   </StackPanel>
 </UserControl>
