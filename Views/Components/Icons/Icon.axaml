@@ -48,4 +48,8 @@
   <StreamGeometry x:Key="IconPressure">
     M22 30H10v-5H6l10-9l10 9h-4Zm-6-14L6 7h4V2h12v5h4Z
   </StreamGeometry>
+  <StreamGeometry x:Key="IconDroplet">
+    M7.29 1.335a.91.91 0 0 1 1.42 0C10.092 3.025 13 
+    6.949 13 10a5 5 0 0 1-10 0c0-3.051 2.909-6.975 4.29-8.665
+  </StreamGeometry>
 </ResourceDictionary>
