@@ -6,5 +6,7 @@
              xmlns:vm="using:WeatherApp.ViewModels.Pages"
              x:Class="WeatherApp.Views.Pages.MapView"
              x:DataType="vm:MapViewModel">
-  Welcome to Maps
+  <StackPanel Spacing="10">
+    <TextBlock Margin="5 0 0 0" Foreground="#203955" FontSize="15" Text="Weather Map" />
+  </StackPanel>
 </UserControl>
