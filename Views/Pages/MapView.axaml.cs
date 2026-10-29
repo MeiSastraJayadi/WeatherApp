@@ -11,6 +11,7 @@ using Mapsui.Projections;
 using Mapsui.Styles;
 using Mapsui.Tiling;
 using Mapsui.Tiling.Layers;
+using WeatherApp.ViewModels.Pages;
 
 namespace WeatherApp.Views.Pages;
 
@@ -69,5 +70,20 @@ public partial class MapView : UserControl
         map.Navigator.CenterOnAndZoomTo(_startingPoint, 1222);
 
         WeatherMap.Map = map;
+    }
+
+    public void OnMapTapped(object? sender, MapEventArgs e)
+    {
+        (double lon, double lat) = 
+            SphericalMercator.ToLonLat(e.WorldPosition.X, e.WorldPosition.Y);
+
+        _pinLayer.Features = new[] { new PointFeature(e.WorldPosition) };
+        _pinLayer.DataHasChanged();
+
+        if (DataContext is MapViewModel mapViewModel)
+        {
+            mapViewModel.SelectedLatitude = lat; 
+            mapViewModel.SelectedLongitude = lon;
+        }
     }
 }

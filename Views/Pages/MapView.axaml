@@ -15,7 +15,7 @@
     <weatherapp:Card Padding="8" Margin="5">
       <Border CornerRadius="10" ClipToBounds="True">
         <Grid>
-          <mapsui:MapControl Height="200" x:Name="WeatherMap" />
+          <mapsui:MapControl Height="200" x:Name="WeatherMap" MapTapped="OnMapTapped" />
           <Grid ColumnDefinitions="*,*" VerticalAlignment="Bottom">
             <StackPanel Grid.Column="0" Margin="5 0 0 5" Spacing="2">
               <TextBlock Foreground="#333333" FontSize="10" Text="Selected location" />
