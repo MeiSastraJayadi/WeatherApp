@@ -1,12 +1,28 @@
 <UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:avalonia="using:Mapsui.UI.Avalonia"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:vm="using:WeatherApp.ViewModels.Pages"
+             xmlns:weatherapp="using:WeatherApp"
+             xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
              x:Class="WeatherApp.Views.Pages.MapView"
              x:DataType="vm:MapViewModel">
   <StackPanel Spacing="10">
     <TextBlock Margin="5 0 0 0" Foreground="#203955" FontSize="15" Text="Weather Map" />
+
+    <weatherapp:Card Padding="5" Margin="10">
+      <Grid>
+        <mapsui:MapControl x:Name="WeatherMap" />
+        <StackPanel Spacing="2">
+            <TextBlock Foreground="#B8C7D9" FontSize="10" Text="Selected location" />
+            <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
+                       Text="{Binding SelectedLatitude, StringFormat='Lat: {0:F5}'}" />
+            <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
+                       Text="{Binding SelectedLongitude, StringFormat='Lon: {0:F5}'}" />
+          </StackPanel>
+      </Grid>
+    </weatherapp:Card>
   </StackPanel>
 </UserControl>
