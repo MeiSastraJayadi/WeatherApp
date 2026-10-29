@@ -13,16 +13,18 @@
     <TextBlock Margin="5 0 0 0" Foreground="#203955" FontSize="15" Text="Weather Map" />
 
     <weatherapp:Card Padding="5" Margin="10">
-      <Grid>
-        <mapsui:MapControl x:Name="WeatherMap" />
-        <StackPanel Spacing="2">
-            <TextBlock Foreground="#B8C7D9" FontSize="10" Text="Selected location" />
-            <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
-                       Text="{Binding SelectedLatitude, StringFormat='Lat: {0:F5}'}" />
-            <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
-                       Text="{Binding SelectedLongitude, StringFormat='Lon: {0:F5}'}" />
-          </StackPanel>
-      </Grid>
+      <Border CornerRadius="10" ClipToBounds="True">
+        <Grid>
+          <mapsui:MapControl x:Name="WeatherMap" />
+          <StackPanel Spacing="2">
+              <TextBlock Foreground="#B8C7D9" FontSize="10" Text="Selected location" />
+              <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
+                        Text="{Binding SelectedLatitude, StringFormat='Lat: {0:F5}'}" />
+              <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
+                        Text="{Binding SelectedLongitude, StringFormat='Lon: {0:F5}'}" />
+            </StackPanel>
+        </Grid>
+      </Border>
     </weatherapp:Card>
   </StackPanel>
 </UserControl>
