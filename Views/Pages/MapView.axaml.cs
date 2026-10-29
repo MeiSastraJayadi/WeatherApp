@@ -6,6 +6,7 @@ using Mapsui.Extensions;
 using Mapsui.Layers;
 using Mapsui.Projections;
 using Mapsui.Styles;
+using Mapsui.Tiling;
 
 namespace WeatherApp.Views.Pages;
 
@@ -28,5 +29,15 @@ public partial class MapView : UserControl
     public MapView()
     {
         InitializeComponent();
+
+        _pinLayer.Features = new[] { new PointFeature(_startingPoint) };
+        _pinLayer.DataHasChanged();
+
+        Map map = new();
+        map.Layers.Add(OpenStreetMap.CreateTileLayer("WeatherApp/1.0"));
+        map.Layers.Add(_pinLayer);
+        map.Navigator.CenterOnAndZoomTo(_startingPoint, 1222);
+
+        WeatherMap.Map = map;
     }
 }

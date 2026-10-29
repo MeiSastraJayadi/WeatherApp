@@ -12,10 +12,10 @@
   <StackPanel Spacing="10">
     <TextBlock Margin="5 0 0 0" Foreground="#203955" FontSize="15" Text="Weather Map" />
 
-    <weatherapp:Card Padding="5" Margin="10">
+    <weatherapp:Card Padding="8" Margin="5">
       <Border CornerRadius="10" ClipToBounds="True">
         <Grid>
-          <mapsui:MapControl x:Name="WeatherMap" />
+          <mapsui:MapControl Height="200" x:Name="WeatherMap" />
           <StackPanel Spacing="2">
               <TextBlock Foreground="#B8C7D9" FontSize="10" Text="Selected location" />
               <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
