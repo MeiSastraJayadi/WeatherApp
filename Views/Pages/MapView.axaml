@@ -16,13 +16,22 @@
       <Border CornerRadius="10" ClipToBounds="True">
         <Grid>
           <mapsui:MapControl Height="200" x:Name="WeatherMap" />
-          <StackPanel VerticalAlignment="Bottom" Spacing="2">
-              <TextBlock Foreground="#B8C7D9" FontSize="10" Text="Selected location" />
-              <TextBlock Foreground="#B8C7D9" FontSize="8" FontWeight="SemiBold"
+          <Grid ColumnDefinitions="*,*" VerticalAlignment="Bottom">
+            <StackPanel Grid.Column="0" Margin="5 0 0 5" Spacing="2">
+              <TextBlock Foreground="#333333" FontSize="10" Text="Selected location" />
+              <TextBlock Foreground="#333333" FontSize="8" FontWeight="SemiBold"
                         Text="{Binding SelectedLatitude, StringFormat='Lat: {0:F5}'}" />
-              <TextBlock Foreground="#B8C7D9" FontSize="8" FontWeight="SemiBold"
+              <TextBlock Foreground="#333333" FontSize="8" FontWeight="SemiBold"
                         Text="{Binding SelectedLongitude, StringFormat='Lon: {0:F5}'}" />
             </StackPanel>
+            <TextBlock Grid.Column="1" Text="© Esri, OSM"
+                FontSize="9"
+                Foreground="#333333"
+                Background="Transparent"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,6,4" />
+          </Grid>
         </Grid>
       </Border>
     </weatherapp:Card>

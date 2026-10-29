@@ -53,11 +53,17 @@ public partial class MapView : UserControl
             BackColor = Color.FromString("#F2F2F2")
         };
 
-        map.Layers.Add(new TileLayer(
-            CreateEsriSource("World_Light_Gray_Base", "Esri Light Gray Base")));
+        TileLayer baseLayer = new TileLayer(
+            CreateEsriSource("World_Light_Gray_Base", "Esri Light Gray Base"));
 
-        map.Layers.Add(new TileLayer(
-            CreateEsriSource("World_Light_Gray_Reference", "Esri Light Gray Labels")));
+        TileLayer labelLayer = new TileLayer(
+            CreateEsriSource("World_Light_Gray_Reference", "Esri Light Gray Labels"));
+
+        baseLayer.Attribution.Enabled = false;
+        labelLayer.Attribution.Enabled = false;
+
+        map.Layers.Add(baseLayer);
+        map.Layers.Add(labelLayer);
 
         map.Layers.Add(_pinLayer);
         map.Navigator.CenterOnAndZoomTo(_startingPoint, 1222);
