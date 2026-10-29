@@ -16,11 +16,11 @@
       <Border CornerRadius="10" ClipToBounds="True">
         <Grid>
           <mapsui:MapControl Height="200" x:Name="WeatherMap" />
-          <StackPanel Spacing="2">
+          <StackPanel VerticalAlignment="Bottom" Spacing="2">
               <TextBlock Foreground="#B8C7D9" FontSize="10" Text="Selected location" />
-              <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
+              <TextBlock Foreground="#B8C7D9" FontSize="8" FontWeight="SemiBold"
                         Text="{Binding SelectedLatitude, StringFormat='Lat: {0:F5}'}" />
-              <TextBlock Foreground="White" FontSize="13" FontWeight="SemiBold"
+              <TextBlock Foreground="#B8C7D9" FontSize="8" FontWeight="SemiBold"
                         Text="{Binding SelectedLongitude, StringFormat='Lon: {0:F5}'}" />
             </StackPanel>
         </Grid>
